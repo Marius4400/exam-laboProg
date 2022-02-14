@@ -1,5 +1,6 @@
 const select = document.querySelectorAll("select")
-const convertValue = document.querySelectorAll("converti").innertext
+
+//const convertValue = document.querySelectorAll("converti").innertext
 
 fetch("https://api.frankfurter.app/currencies")
     .then(function(response){
@@ -30,6 +31,7 @@ fetch(`https://${host}/latest?amount=${amountValue.value}&from=${currency1}&to=$
         const valeur = Object.values(data.rates); 
         console.log(valeur)
         convertValue.innertext = valeur + " " + currency2
+        document.getElementById("converti").innerText = "Valeur converti: " + convertValue.innertext ;
     })
 
 })
